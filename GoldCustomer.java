@@ -8,6 +8,9 @@ import com.ioc.interfaces.CreditCard;
 
 @Component
 public class GoldCustomer implements CreditCard{
+
+	@Autowired
+	GoldBenifits gb;
 	
 	private String type;
 	private String hQ;
@@ -15,6 +18,7 @@ public class GoldCustomer implements CreditCard{
 	@Override
 	public void displayCustomer() {
 		System.out.println(type + " has hQ at " +hQ);
+		gb.dispBenifits();
 		
 	}
 
