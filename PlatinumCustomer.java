@@ -8,12 +8,17 @@ import com.ioc.interfaces.CreditCard;
 
 @Component
 public class PlatinumCustomer implements CreditCard{
+
+	@Autowired
+	PlatinumBenifits pb;
+	
 	private String type;
 	private String hQ;
 
 	@Override
 	public void displayCustomer() {
 		System.out.println(type + " has hQ at " +hQ);
+		pb.dispBenifits();
 		
 	}
 	
